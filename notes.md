@@ -14,4 +14,4 @@ useEffect executes after each render
 ####react-hooks-intro: 
 AppClass.js, AppFunction.js, Login.js, Register.js
 ####hooks-news:
-App.js
+AppNews.js, AppNews.css
