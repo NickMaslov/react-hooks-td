@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+/** heact-hooks-intro */
 // import App from './AppClass';
 // import App from './AppFunction';
 // import App from './Login'
-import App from './Register';
+// import App from './Register';
+
+/** hooks-news */
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
