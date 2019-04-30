@@ -15,3 +15,7 @@ useEffect executes after each render
 AppClass.js, AppFunction.js, Login.js, Register.js
 ####hooks-news:
 AppNews.js, AppNews.css
+####hooks-counter-reducer
+AppCounterReducer.js
+####hooks-todos
+index.js, TodoForm.js, TodoList.js, context.js, reducer.js

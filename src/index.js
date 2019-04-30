@@ -10,33 +10,31 @@ import * as serviceWorker from './serviceWorker';
 /** hooks-news */
 // import App from './AppNews';
 
-
 /** hooks-reducer-counter */
 // import App from './AppCounterReducer';
 // export const UserContext = React.createContext()
 // const username = "Dave";
 //ReactDOM.render(<UserContext.Provider value={username}><App /></UserContext.Provider>, document.getElementById('root'));
 
-
 /** hooks-todos */
 
-import TodosContext from './context'
-import todosReducer from './reducer'
-import { useContext, useReducer} from 'react'
-import TodoList from './components/TodoList'
-import './AppNews.css'
-const App=()=>{
-    const initialState=useContext(TodosContext)
-    const [state, dispatch] = useReducer(todosReducer, initialState)
-    
-    return (
-    <TodosContext.Provider value={{state,dispatch}}>
-        <TodoList />
-    </TodosContext.Provider>)
-}
+import './AppNews.css';
+import TodosContext from './context';
+import todosReducer from './reducer';
+import { useContext, useReducer } from 'react';
+import TodoList from './components/TodoList';
+import TodoForm from './components/TodoForm';
+const App = () => {
+  const initialState = useContext(TodosContext);
+  const [state, dispatch] = useReducer(todosReducer, initialState);
 
-
-
+  return (
+    <TodosContext.Provider value={{ state, dispatch }}>
+      <TodoForm />
+      <TodoList />
+    </TodosContext.Provider>
+  );
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -44,7 +42,6 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // if (module.hot) {
 //     module.hot.accept();
 // }
-
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
