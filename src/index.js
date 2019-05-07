@@ -26,34 +26,32 @@ import { useContext, useReducer, useState, useEffect } from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 
-
-const useAPI = endpoint =>{
-  const [data, setData] = useState([])
+const useAPI = endpoint => {
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    getData()
-  }, [])
+    getData();
+  }, []);
 
   const getData = async () => {
-    const response = await axios.get(endpoint)
-    setData(response.data)
-  }
+    const response = await axios.get(endpoint);
+    setData(response.data);
+  };
 
   return data;
-}
-
+};
 
 const App = () => {
   const initialState = useContext(TodosContext);
   const [state, dispatch] = useReducer(todosReducer, initialState);
   const savedTodos = useAPI('https://hooks-api.nickmaslov.now.sh/todos');
 
-  useEffect(() =>  {
+  useEffect(() => {
     dispatch({
-      type: "GET_TODOS",
-      payload: savedTodos
-    })
-  },[savedTodos])
+      type: 'GET_TODOS',
+      payload: savedTodos,
+    });
+  }, [savedTodos]);
 
   return (
     <TodosContext.Provider value={{ state, dispatch }}>
